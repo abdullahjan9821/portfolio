@@ -1,0 +1,349 @@
+/* ======== Google Fonts ======== */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;1,500&display=swap');
+
+/* ---------------------- */
+/*     CSS Variables      */
+/* ---------------------- */
+:root {
+    /* ======== colors ======== */
+    /* color mode HSL (Hue, Saturation, Lightness) */
+    --clr-primary: rgb(26, 26, 26);
+    --clr-neutral: rgb(255, 255, 255);
+    --clr-neutral-300: rgb(181, 181, 181);
+    --clr-neutral-400: rgb(128, 128, 128);
+    --clr-font: rgb(85, 85, 85);
+    
+    /* ======== Typography ======== */
+    /* Font Family */
+    --ff-base: 'Raleway', sans-serif;
+    --ff-title: "Playfair Display", serif;
+
+    /* Font Weight */
+    --fw-regular: 400;
+    --fw-semi-bold: 500;
+    --fw-bold: 600;
+
+    /* Font Size */
+    /* Scale - 1rem = 16px */
+    --body-copy: 1.2rem; /* text-4xl */
+    --fs-200: 0.875rem; /* text-sm */
+    --fs-400: 1rem; /* text */
+    --fs-500: 1.125rem; /* text-md */
+    --fs-600: 1.75rem; /* text-lg */
+    --fs-700: 2rem; /* text-1xl */
+    --fs-800: 3.5rem; /* text-2xl */
+    --fs-900: 6.25rem; /* text-3xl */
+
+    /* Headings */
+    --h1: 2rem;
+    --h2: 1.8rem;
+    --h3: 1.6rem;
+    --h4: 1.4rem;
+    --h5: 1.2rem;
+    --h6: 1rem;
+
+    /* ======== z-index ======== */
+    --z-tooltip: 10;
+    --z-fixed: 100;
+
+    /* ======== Margin ======== */
+    /* ======== Padding ======== */
+    /* ======== Box Shadow ======== */
+    /* ======== Border Radius ======== */
+}
+
+/* ---------------------- */
+/*   Dark Mode Variables  */
+/* ---------------------- */
+.darkmode {
+    --clr-light: 231 77% 90%;
+    --clr-dark: 230 35% 7%;
+    --clr-primary: 220 34% 89%;
+    --clr-secondary: 230 45% 54%;
+    --clr-accent: 0 0% 10%;
+
+    --foreground: var(--clr-light);
+    --background: var(--clr-dark);
+}
+
+/* ---------------------- */
+/*      Base Resets       */
+/* ---------------------- */
+/* ==== Remove default margins & paddings ==== */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==== Set up the body ==== */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: var(--ff-base);
+    font-size: var(--fs-400);
+    font-weight: var(--fw-regular);
+    line-height: 1.5; /* 1.4 default */
+}
+
+p {
+    color: var(--clr-font);
+}
+
+/* ==== Make images easier to work with ==== */
+img,
+picture {
+    width: 100%;
+    display: block;
+}
+
+/* ==== Make form elements easier to work with ==== */
+input,
+textarea,
+button,
+select {
+    font: inherit;
+}
+
+/* ==== Remove list style ==== */
+ul {
+    list-style: none;
+}
+
+/* ==== Remove link decoration ==== */
+a {
+    text-decoration: none;
+    color: var(--clr-font);
+}
+
+a:link,
+a:hover,
+a:active,
+a:visited {
+    color: var(--clr-font);
+}
+
+/* ==== Transition ==== */
+a,
+.btn {
+    transition: all 300ms ease;
+}
+
+/* ------------------------------------------ */
+/*   Utility Classes (Reusable CSS Classes)   */
+/* ------------------------------------------ */
+/* Layout */
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+    gap: var(--gap, 1.2rem);
+}
+
+/* Colors */
+.bg-dark { background-color: hsl( var(--clr-dark) ); }
+.bg-accent { background-color: hsl( var(--clr-light) ); }
+.bg-white { background-color: hsl( var(--clr-white) ); }
+
+.text-dark { color: hsl( var(--clr-dark) ); }
+.text-accent { color: hsl( var(--clr-light) ); }
+.text-white { color: hsl( var(--clr-white) ); }
+
+.example-component {
+    background-color: hsl( var(--clr-light) / .2 );
+}
+
+/* Typography */
+.ff-serif { font-family: var(--ff-serif); } 
+.ff-sans-cond { font-family: var(--ff-sans-cond); } 
+.ff-sans-normal { font-family: var(--ff-sans-normal); } 
+
+.fs-900 { font-size: var(--fs-900); }
+.fs-800 { font-size: var(--fs-800); }
+.fs-700 { font-size: var(--fs-700); }
+.fs-600 { font-size: var(--fs-600); }
+.fs-500 { font-size: var(--fs-500); }
+.fs-400 { font-size: var(--fs-400); }
+.fs-300 { font-size: var(--fs-300); }
+.fs-200 { font-size: var(--fs-200); }
+
+.fs-900,
+.fs-800,
+.fs-700,
+.fs-600 {
+    line-height: 1.1;
+}
+
+.fw-normal { font-weight: var(--fw-regular); }
+.fw-semi-bold { font-weight: var(--fw-semi-bold); }
+.fw-bold { font-weight: var(--fw-bold); }
+
+.letter-spacing-regular { letter-spacing: 1px; } 
+.letter-spacing-medium { letter-spacing: 2px; } 
+.letter-spacing-wide { letter-spacing: 3px; } 
+
+.uppercase { text-transform: uppercase; }
+
+/* Headings */
+.h1 { font-size: var(--h1); font-weight: var(--fw-bold); }
+.h2 { font-size: var(--h2); font-weight: var(--fw-bold); }
+.h3 { font-size: var(--h3); font-weight: var(--fw-bold); }
+
+/* Buttons */
+.btn {
+    padding: .6rem 1.2rem;
+    margin-inline: .4rem;
+    border-radius: 32px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--clr-neutral);
+    color: var(--clr-primary);
+    border: .09rem solid var(--clr-primary);
+}
+
+.btn-secondary {
+    background-color: var(--clr-primary);
+    color: var(--clr-neutral);
+    border: .09rem solid var(--clr-primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--clr-primary);
+    color: var(--clr-neutral);
+}
+
+/* ------------------- */
+/*     Compontents     */
+/* ------------------- */
+/* Header */
+header {
+    width: 100%;
+    height: 20vh;
+    align-items: center;
+}
+
+.navbar {
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .nav-links ul {
+    justify-content: space-between;
+    column-gap: 2rem;
+}
+
+.navbar .nav-links ul li a:hover {
+    text-decoration: underline;
+    color: var(--clr-neutral-300);
+    text-decoration-color: var(--clr-neutral-300);
+    text-underline-offset: .8rem;
+}
+
+/* Sections */
+section {
+    width: 75%;
+    margin: 0 auto;
+    height: 95%;
+    padding-top: 5%;
+    min-height: fit-content;
+}
+
+/* Section-I: Profile */
+.profile {
+    justify-content: space-around;
+    align-items: center;
+}
+
+.profile__picture {
+    width: 340px;
+    height: 340px;
+}
+
+.profile__picture img {
+    width: 340px;
+    height: 340px;
+    border: 2px solid var(--clr-neutral);
+    border-radius: 50%;
+}
+
+.profile__text {
+    height: 400px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: .2rem;
+}
+
+.profile__text-btn {
+    padding-block: 1rem;
+}
+
+.profile__text-social {
+    column-gap: 1rem;
+}
+
+.profile__text-social img {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+}
+
+/* Section-II: About */
+.about {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 3rem;
+}
+
+.about__header {
+    text-align: center;
+}
+
+.about__content {
+    width: 100%;
+    column-gap: 2.6rem;
+}
+
+.about__content-img {
+    width: 30%
+}
+
+.about__content-img img {
+    width: 340px;
+    height: 340px;
+    border-radius: 22px;
+}
+
+.about__content-info {
+    width: 70%; 
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 1rem;
+}
+
+.about__content-info-top {
+    column-gap: 2rem;
+}
+
+.about__experience,
+.about__education {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border: .09rem solid var(--clr-neutral-300);
+    border-radius: 22px;
+}

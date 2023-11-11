@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- !Meta Data -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="keyword-1, keyword-2, keyword-3">
+        <meta name="description" content="about text">
+        <meta name="author" content="Rasheed Ahmad">
+        <meta name="theme-color" content="">
+
+        <!-- !Site Title -->
+        <title>Rasheed Ahmad</title>
+
+        <!-- !Favicon -->
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+        <!-- !External CSS -->
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="./mediaqueries.css">
+
+        <!-- Material Icons CDN -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+              rel="stylesheet">
+        
+    </head>
+    <body>
+        <header class="flex">
+            <nav class="navbar flex">
+                <div class="logo">
+                    <h1 class="fw-bold uppercase letter-spacing-regular">Rasheed Ahmad</h1>
+                </div>
+                <div class="nav-links">
+                    <ul class="flex">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section id="profile" class="profile flex">
+                <div class="profile__picture">
+                    <img src="./assets/profile.jpeg">
+                </div>
+                <div class="profile__text flex">
+                    <p class="fs-400 fw-bold">Hello, I'm</p>
+                    <h1 class="h1">Rasheed Ahmad</h1>
+                    <p class="fs-500 fw-bold">Full Stack Web Developer</p>
+                    <div class="profile__text-btn">
+                        <button 
+                            class="btn btn-primary" 
+                            onClick="window.open('./assets/Rasheed_Ahmad_CV.pdf');">
+                            Download CV
+                        </button>
+                        <button 
+                          class="btn btn-secondary"
+                          onclick="location.href='./#contact'">
+                          Contact Ifno
+                        </button>
+                    </div>
+                    <div class="profile__text-social flex">
+                        <img 
+                          src="./assets/github.png"
+                          alt="Rasheed GitHub Profile"
+                          class="icon"
+                          onclick="window.open('https://github.com/RasheedAhmad1','_blank')"
+                        />
+                        <img 
+                          src="./assets/linkedin.png"
+                          alt="Rasheed LinkenIn Profile"
+                          class="icon"
+                          onclick="window.open('https://www.linkedin.com/in/rasheedahmad1/','_blank')"
+                        />
+                    </div>
+                </div>
+            </section>
+            <section id="about" class="about flex">
+                <div class="about__header">
+                    <p class="fs-400 fw-bold">Get to know more</p>
+                    <h2 class="h2">About Me</h2>
+                </div>
+                <div class="about__content flex">
+                    <div class="about__content-img flex">
+                        <img src="./assets/profile.jpeg">
+                    </div>
+                    <div class="about__content-info flex">
+                        <div class="about__content-info-top flex">
+                            <div class="about__experience flex">
+                                <span class="material-icons-sharp">network_check</span>
+                                <h4>Experience</h4>
+                                <p>2+ Years</p>
+                                <p>Front-end Developer</p>
+                            </div>
+                            <div class="about__education flex">
+                                <span class="material-icons-sharp">work</span>
+                                <h4>Education</h4>
+                                <p>BE Software Engineering</p>
+                                <p>FSc Pre-engineering</p>
+                            </div>
+                        </div>
+                        <div class="about__content-info-bottom">
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad ipsam perferendis suscipit aliquam sit velit quidem blanditiis eum veritatis autem rerum odio sapiente repellat explicabo minus quae quaerat tempore aut, qui enim? Ad eius earum quam, qui impedit repellat rem delectus, nemo magni ducimus ipsam a provident facere aliquid iure similique labore saepe accusantium animi officiis amet.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="experience">
+                <h2>Experience</h2>
+            </section>
+            <section id="projects">
+                <h2>Projects</h2>
+            </section>
+            <section id="contact">
+                <h2>Contact</h2>
+            </section>
+        </main>
+
+        <!-- <div id="cookie-notice" style="width: 100%; position: fixed; z-index: 1000; bottom: 0; left: 0; background-color: lightgray;">
+            <p>This website uses cookies so that we can provide you with the best website experience. By clicking “I Accept” you acknowledge the use of cookies and to our <a href="#"><u>Privacy Policy</u></a>.</p>
+            <a id="i-accept">I Accept</a>
+        </div> -->
+        
+        <!--[if IE]>
+            <div style="width: 100%; position: fixed; z-index: 1000; bottom: 0; left: 0; background: lightgray;"><p>Outdated browser dectected. Please use a modern browser for a better browsing experience.</p>
+                <div onClick="parentNode.remove()">Close [X]</div>
+            </div>
+            <![endif]-->
+
+        <!-- !Footer -->
+        <!-- <footer>
+            <small>Copyright &copy; <script>document.write(new Date().getFullYear())</script> Your company name. All Rights Reserved.</small>
+        </footer> -->
+
+        <!-- !jQuery -->
+        <!-- <script src="https://code.jquery.com/jquery-3.7.0.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            (function($){
+            $('#i-accept').on('click', function() {   
+                if(localStorage.hidecookiebar !== '1') {
+                $('#cookie-notice').hide();
+                localStorage.hidecookiebar='1';
+                }  
+            });
+            if(localStorage.hidecookiebar == '1') {
+                $('#cookie-notice').hide();
+            };
+            })(jQuery);
+        </script> -->
+
+        <!-- !External JavaScript -->
+        <script src="./script.js"></script>
+
+        <!-- !Ionicons CDN -->
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    </body>
+</html>
